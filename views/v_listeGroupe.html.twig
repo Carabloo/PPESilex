@@ -1,0 +1,13 @@
+{% extends "layout.html.twig"%}
+{% block content %}
+    {% for unGroupe in groupes %}
+        <table>
+            {%set nom=unGroupe.nom %}
+            {%set pays=unGroupe.nomPays %}
+            <tr>
+                <td>{{ nom }}  &rArr;  {{ pays }}</td>
+                <p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+            </tr>
+        </table>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "layout.html.twig"%}
+{% block content %}		
+		{% set id = medecins.id %}
+		{% set nom = medecins.nom %}
+		{% set prenom = medecins.prenom %}
+		{% set adresse = medecins.adresse %}
+		{% set tel = medecins.tel %}
+		{% set departement = medecins.departement %}
+		{% set specialite = medecins.specialitecomplementaire %}
+		Nom  : {{nom}} </br>
+		Prenom : {{prenom}} </br>
+		Adresse : {{adresse}} </br>
+		Telephone : {{tel}} </br>
+		Departement : {{departement}} </br>
+		{% if specialite is null or specialite == ""%}
+		{% else %}
+			Specialite : {{specialite}} </br>
+		{% endif %}
+	<button><a href="{{ path('modifFormMedecin', {'id': id}) }}">Modifier</a></button>
+{% endblock %}

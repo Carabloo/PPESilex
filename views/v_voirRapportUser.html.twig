@@ -1,0 +1,16 @@
+{% extends "layout.html.twig" %}
+{% block content %}
+        <table>
+        {% for unRapports in Rapports %}
+            {% set motif=unRapports.motif %}
+            {% set date=unRapports.date %}
+            {% set bilan=unRapports.bilan %}
+            <tr>
+                <td>{{ motif }}</td>
+                <td>{{ date }}</td>
+                <td>{{ bilan }}</td>
+        {% endfor %}
+            </tr>
+        
+        </table>
+{% endblock %}

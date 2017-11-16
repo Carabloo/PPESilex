@@ -1,0 +1,53 @@
+{% extends "layout.html.twig"%}
+{% block content %}
+
+<h1>Liste Medecin</h1>
+<link href="{{ asset('/lib/style.css') }}" rel="stylesheet">
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+<table id="myTable">
+	<tr class="header">
+		<th style="width:60%;">Nom</th>
+		<th style="width:40%;">Prénom</th>
+
+
+	{% for unMedecin in medecins %}
+		{% set nom = unMedecin.nom %}
+		{% set prenom = unMedecin.prenom %}
+		{% set id = unMedecin.id %}
+		<tr onclick="return btn_click({{id}})">
+			<td>{{nom}}</td>
+			<td>{{prenom}}</td>
+		</tr>
+	{% endfor %}
+</table>
+
+<script>
+	function myFunction() {
+		// Declare variables
+		var input, filter, table, tr, td, i;
+		input = document.getElementById("myInput");
+		filter = input.value.toUpperCase();
+		table = document.getElementById("myTable");
+		tr = table.getElementsByTagName("tr");
+
+		// Loop through all table rows, and hide those who don't match the search query
+		for (i = 0; i < tr.length; i++) {
+			td = tr[i].getElementsByTagName("td")[0];
+			if (td) {
+				if (td.innerHTML.toUpperCase().indexOf(filter) > -1)
+				{
+					tr[i].style.display = "";
+				}
+				else {
+					tr[i].style.display = "none";
+				}
+			}
+		}
+	}
+
+	function btn_click(idMedecin){
+		window.location.href = "http://www.sio-savary.fr/fchevalier/PPESilex/web/index.php/infosMedecin/" + idMedecin;
+	}
+</script>
+{% endblock %}

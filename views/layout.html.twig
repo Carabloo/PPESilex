@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>PPE</title>
+        <link href="{{ asset('/lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		
+    </head>
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                     <div class="navbar-header">
+                       <a class="navbar-brand" href="{{ path('homepage') }}">Accueil</a>
+                     </div>
+                     <div class="navbar-header">
+                       <a class="navbar-brand" href="{{ path('ajoutCompteRendu') }}">Ajoutez un compte rendu</a>
+                     </div>
+                     <div class="navbar-header">
+                       <a class="navbar-brand" href="{{ path('listeMedecins') }}">Liste Medecins</a>
+                     </div>
+					 <div class="navbar-header">
+                       <a class="navbar-brand" href="{{ path('listeMedicaments') }}">Liste Medicaments</a>
+                     </div>
+                     <div class="navbar-header">
+                       <a class="navbar-brand" href="{{ path('listerRapport') }}">Mes Rapports</a>
+                     </div>
+                </div>
+            </nav>
+            <section>
+                {% block content %}
+                {% endblock %}
+            </section>
+            <footer class="footer">
+            </footer>
+        </div>
+    </body>
+</html>

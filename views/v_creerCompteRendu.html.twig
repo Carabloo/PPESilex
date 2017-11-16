@@ -1,0 +1,14 @@
+{% extends "layout.html.twig"%}
+{% block content %}
+	<script>src="/web/lib/jquery/creerCrompteRendu.js"</script>	
+    {{ form_start(form) }}
+        {{ form_errors(form) }}
+        {{ form_row(form.date) }}
+        {{ form_row(form.bilan) }}
+        {{ form_row(form.idVisiteur) }}
+        {{ form_row(form.idMedecin) }}
+        {{ form_row(form.idMedicament) }}
+        {{ form_row(form.quantite) }}
+        {{ form_row(form.motif) }}
+    {{ form_end(form) }}
+{% endblock %}
